@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<a href="{% url 'snack_create' %}">+ Add Snack</a>
+<div  style="display: grid;grid-template-columns: 250px 250px auto;gap: 5rem;">
+  {% for snack in object_list %}
+  <div style="display: flex; flex-direction: column; flex-wrap: wrap">
+
+    {#  Single Card Template:#}
+      <div class="card" style="width: 18rem; margin: 10px">
+        <img src="https://media.istockphoto.com/photos/group-of-sweet-and-salty-snacks-perfect-for-binge-watching-picture-id1149135424" class="card-img-top" >
+        <div class="card-body">
+          <div style="display: flex; flex-direction: row">
+            <h5 class="card-title">{{ snack.title }}</h5>
+            
+            
+          </div>
+          <p class="card-text"></p>
+          <a href="{% url 'snack_detail' snack.pk %}" class="btn btn-primary">View Details</a>
+          
+        </div>
+      </div>
+    
+    </div>
+  
+    
+  
+  {% endfor %}
+
+</div>
+{% endblock %}
