@@ -1,0 +1,33 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+<a href="{% url 'snack_view' %}">Back to Snacks</a>
+
+
+<div  style="display: grid;grid-template-columns: 250px 250px auto;gap: 5rem;">
+    
+    <div style="display: flex; flex-direction: column; flex-wrap: wrap">
+  
+      {#  Single Card Template:#}
+        <div class="card" style="width: 18rem; margin: 10px">
+          <img src="https://media.istockphoto.com/photos/group-of-sweet-and-salty-snacks-perfect-for-binge-watching-picture-id1149135424" class="card-img-top" >
+          <div class="card-body">
+              
+            <div style="display: flex; flex-direction: row">
+              <h5 class="card-title">{{ snack_object.title }}</h5>
+              
+              
+            </div>
+            <p class="card-text">{{ snack_object.description }}</p>
+            <a href="{% url 'snack_update' snack_object.pk %}" style="color: green">+ Update Snack</a>
+<a href="{% url 'snack_delete' snack_object.pk %}"style="color: red">- Delete Snack</a>
+            
+          </div>
+        </div>
+      
+      </div>
+</div>      
+
+
+{% endblock content %}
