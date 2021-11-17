@@ -12,4 +12,4 @@ I created this project by using the DjangoX templates library
 
 
 
-
+**pull req:** https://github.com/adhammhaydat/auth-django-app/pull/1
